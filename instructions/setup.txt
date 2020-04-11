@@ -1,0 +1,28 @@
+********************
+** INITIAL SET-UP **
+********************
+
+1. Create a root folder 
+$ mkdir <root-name>
+
+2. Move into that folder and create your client folder by creating a React app
+$ cd <root-name>
+$ create-react-app <client-name>
+
+3. Delete all files in your src folder
+
+4. In the /src directory, create an index.js file and add boilerplate code:
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from './components/App';
+ReactDOM.render( <App />, document.querySelector('#root'));
+
+5. In the /src directory, create a Components folder and inside it, create an App component and add your boilerplate code:
+import React from 'react';
+const App = () => {
+    return <div>App</div>;
+}
+export default App;
+
+6. Start your server and confirm the App component is displayed.
+$ npm start

@@ -1,0 +1,17 @@
+.top-nav {
+    background: #fff;
+    position: fixed;
+    width: 100%;
+    top: 0;
+}
+
+.top-nav a {
+    color: #000;
+    line-height: 40px;
+    display: inline-block;
+    padding: 0 3vw;
+}
+
+.top-nav a:hover {
+    background: lightgray;
+}

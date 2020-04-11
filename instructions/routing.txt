@@ -1,0 +1,72 @@
+********************
+** ROUTING SET-UP **
+********************
+
+1. inside your client folder, install React Router
+$ npm i --s react-router-dom
+
+2. In your root component (App) import BrowserRouter and Route from React-Router
+import { BrowserRouter, Route } from 'react-router-dom';
+
+3. Create TWO new components (including a Home component) and return some simple JSX:
+const Procedures = () => {
+    return <div>Procedures</div>;
+}
+export default Procedures;
+
+4. Import those two pages in your root component (App).
+import Procedures from './Procedures';
+import Home from './Home';
+
+5. Import the BrowserRouter and Route from React-Router into your App component:
+import { BrowserRouter, Route } from 'react-router-dom';
+
+6. Add an instance of the BrowserRouter in the root component's (App) file.
+const App = () => {
+    return (
+        <div>
+            <BrowserRouter></BrowserRouter>
+        </div>
+    )
+}
+
+7. Add Routes for your two new components (be sure to add a wrapper div inside the BrowserRouter to hold all your Routes)
+<BrowserRouter>
+    <Route path='/' exact component={Home}></Route>
+    <Route path='/procedures' component={Procedures}></Route>
+</BrowserRouter>
+
+8. Create a Nav component and import Link from React Router:
+import React from 'react';
+import { Link } from 'react-router-dom';
+const Nav = () => {
+    return <div>Navbar</div>
+}
+export default Nav;
+
+9. Add your React Links to the Nav component:
+import React from 'react';
+import { Link } from 'react-router-dom';
+const Nav = () => {
+    return (
+        <div>
+            <Link to="/procedures">Procedures</Link>
+            <Link to="/" >Home</Link>
+        </div>
+    )
+}
+export default Nav;
+
+10. Import the Nav component (and all other components you have Routes for) into your root component and add the Nav component inside the BrowserRouter:
+...
+import Home from './Home';
+import Nav from './Nav';
+...
+ <BrowserRouter>
+    <Nav></Nav>
+    <div>
+        <Route path='/' exact component={Home}></Route>
+        <Route path='/plans' component={Plans}></Route>
+        <Route path='/procedures' component={Procedures}></Route>
+    </div>
+</BrowserRouter>

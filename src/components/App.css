@@ -1,0 +1,23 @@
+body {
+    margin: 0;
+    padding: 0;
+    /* background: url('https://images.unsplash.com/photo-1513002749550-c59d786b8e6c?ixlib=rb-1.2.1&w=1000&q=80'); */
+    /* background-size: cover; */
+    /* background-repeat: no-repeat; */
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.txt-ctr {
+    text-align: center;
+}
+
+.main-page {
+    margin: 40px 5px 0;
+}
