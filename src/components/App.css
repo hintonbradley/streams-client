@@ -14,10 +14,42 @@ body {
     float: right;
 }
 
+.in-bl {
+    display: inline-block;
+    vertical-align: top;
+}
+
 .txt-ctr {
     text-align: center;
 }
 
 .main-page {
-    margin: 40px 5px 0;
+    margin: 80px 0 0;
+}
+
+.ui.menu {
+        background: #fff;
+        position: fixed;
+        width: 100%;
+        top: 0;
+}
+
+.img-xs {
+    max-width: 250px;
+}
+
+.img-sm {
+    max-width: 450px
+}
+
+.img-md {
+
+}
+
+.img-lg {
+
+}
+
+.img-xl {
+    
 }

@@ -30,6 +30,16 @@ const AppPlans = () => {
             {type:'header',text:'User Authentication'},
             {type:'image', src:'userAuthentication', classes:'img-sm', description: 'user authentication'},
         ]} />
+        <PlanDetail card="light" obj={[
+            {type:'header',text:'Component paths'},
+            {type:'image', src:'pathComponents', classes:'img-sm', description: 'Each path and it\'s component'},
+        ]} />
+        <PlanDetail card="dark" obj={[
+            {type:'header',text:'User Authentication Example'},
+            {type:'text',text:'Streamer\'s Computer = client/user'},
+            {type:'image', src:'authLoginExample', classes:'img-md', description: 'user authentication example'},
+        ]} />
+
     </div> )
 }
 
