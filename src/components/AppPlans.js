@@ -36,8 +36,33 @@ const AppPlans = () => {
         ]} />
         <PlanDetail card="dark" obj={[
             {type:'header',text:'User Authentication Example'},
-            {type:'text',text:'Streamer\'s Computer = client/user'},
             {type:'image', src:'authLoginExample', classes:'img-md', description: 'user authentication example'},
+        ]} />
+        <PlanDetail card="light" obj={[
+            {type:'header',text:'Why OAuth'},
+            {type:'image', src:'whyOauth', classes:'img-sm', description: 'Why use OAuth?'},
+        ]} />
+        <PlanDetail card="dark" obj={[
+            {type:'header',text:'What we\'re accessing with OAuth'},
+            {type:'image', src:'googleScopeDefinition', classes:'img-md', description: 'user authentication example'},
+        ]} />
+        <PlanDetail card="light" obj={[
+            {type:'header',text:'OAuth for Servers vs. OAuth for Browsers'},
+            {type:'image', src:'oAuthForBrowsers', classes:'img-md', description: 'OAuth for Javascript browsers'},
+        ]} />
+        <PlanDetail card="dark" obj={[
+            {type:'header',text:'oAuth flow'},
+            {type:'image', src:'oAuthFlow', classes:'img-md', description: 'OAuth user flowchart'},
+        ]} />
+        <PlanDetail card="light" obj={[
+            {type:'header',text:'Steps to set up OAuth'},
+            {type:'image', src:'oAuthSteps', classes:'img-md', description: 'Steps to set up OAuth'},
+        ]} />
+        <PlanDetail card="light" obj={[
+            {type:'header',text:'Auth Object'},
+            {type:'text',text:'Inside the Auth object we have a list of methods we use to log in, log out and validate user/info when they want to access our application. We need to link this up to a React component in order to be able to call each method inside the Auth Object when needed.'},
+            {type:'image', src:'authObjectSteps', classes:'img-sm', description: 'Steps with OAuth library'},
+            {type:'image', src:'authObject', classes:'img-md', description: 'The Auth Object'},
         ]} />
 
     </div> )
