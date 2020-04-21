@@ -58,11 +58,18 @@ const AppPlans = () => {
             {type:'header',text:'Steps to set up OAuth'},
             {type:'image', src:'oAuthSteps', classes:'img-md', description: 'Steps to set up OAuth'},
         ]} />
-        <PlanDetail card="light" obj={[
+        <PlanDetail card="dark" obj={[
             {type:'header',text:'Auth Object'},
             {type:'text',text:'Inside the Auth object we have a list of methods we use to log in, log out and validate user/info when they want to access our application. We need to link this up to a React component in order to be able to call each method inside the Auth Object when needed.'},
             {type:'image', src:'authObjectSteps', classes:'img-sm', description: 'Steps with OAuth library'},
             {type:'image', src:'authObject', classes:'img-md', description: 'The Auth Object'},
+        ]} />
+        <PlanDetail card="light" obj={[
+            {type:'header',text:'Add oAuth to Redux'},
+            {type:'text',text:'The way we will add oAuth to Redux is below. This is a non-conventional way, but we are doing it this way to keep all oAuth code encapsulated in this one component.'},
+            {type:'image', src:'oAuthAddNonConvention', classes:'img-md', description: 'Adding oAuth to Redux in non-conventional way'},
+            {type:'text',text:'The more conventional way of adding oAuth to an application with Redux is below. You would normally want the Action Creators to be the component to handle updating data for your application, and not have a separate component manage data updates (as in the above example).'},
+            {type:'image', src:'oAuthAddConventional', classes:'img-md', description: 'Adding oAuth to Redux in a conventional way'},
         ]} />
 
     </div> )

@@ -58,6 +58,12 @@ const Setup = () => {
             {type:'image', src:'addLinksToHeader', classes:'img-sm', description: 'Adding links to component inside BrowserRouter'}
         ]} />
 
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Add Redux/React-Redux'},
+            {type:'text', text:'Use npm to install redux and react-redux.'},
+            {type:'image', src:'installReactAndRR', classes:'img-md', description: 'Adding links to component inside BrowserRouter'}
+        ]} />
+
     </div>)
 }
 
