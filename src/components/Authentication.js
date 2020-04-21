@@ -137,6 +137,25 @@ const Auth = () => {
             {type:'image', src:'removeState', classes:'img-sm', description: 'initializing Auth'},
         ]} />
 
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Refactor using Types'},
+            {type:'text', text:'In the actions folder, create a new file called types. This will hold variables for all the Action names to be used in your Action Creators and Reducers. '},
+            {type:'image', src:'actionTypes', classes:'img-sm', description: 'action types defined'},
+            {type:'text', text:'Then import the new file into your index.js file in the actions folder as well as the authReducer file in reducers folder, and use the variable names instead of strings. '},
+            {type:'image', src:'typesInAC', classes:'img-sm', description: 'types in actions'},
+            {type:'image', src:'typesInReducers', classes:'img-sm', description: 'types in reducers'}
+        ]} />
+
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Saving Google Id during Sign in'},
+            {type:'text', text:'We need to capture the Google Id when a user signs in. So, in the GoogleAuth component, we need to find the signIn method in the onAuthChange method and add in the user\'s Google Id as an argument using the api library. '},
+            {type:'image', src:'googleIdArgument', classes:'img-sm', description: 'google id as argument'},
+            {type:'text', text:'In the index.js file in the actions folder, add in the userId as a parameter and add it to the payload property.'},
+            {type:'image', src:'acParamsUserId', classes:'img-sm', description: 'params in AC'},
+            {type:'text', text:'In the reducer, be sure to update state. (Be sure to add in userId property in the INITIAL_STATE object)'},
+            {type:'image', src:'updateStateUserId', classes:'img-sm', description: 'types in reducers'}
+        ]} />
+
     </div>)
 }
 
