@@ -1,5 +1,5 @@
 import React from 'react';
-import './PlanDetail.css';
+import '../PlanDetail.css';
 
 class ProcedureDetail extends React.Component {
 
@@ -12,7 +12,7 @@ class ProcedureDetail extends React.Component {
             )
         } else if (item.type==='image') {
             return (
-                <img key={`img-${i}`} className={`plan-img ${item.classes}`} src={require(`../img/${item.src}.jpg`)} alt={item.description} />
+                <img key={`img-${i}`} className={`plan-img ${item.classes}`} src={require(`../../img/${item.src}.jpg`)} alt={item.description} />
             )
         } else if (item.type==='header') {
             return (

@@ -64,6 +64,15 @@ const Setup = () => {
             {type:'image', src:'installReactAndRR', classes:'img-md', description: 'Adding links to component inside BrowserRouter'}
         ]} />
 
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Setting up Redux Dev Tools'},
+            {type:'text', text:'First be sure that Redux Dev Tools is installed. If not, go to https://github.com/zalmoxisus/redux-devtools-extension and install.'},
+            {type:'text', text:'In the root index.js file, add applyMiddleware and the compose function to the redux import line.'},
+            {type:'image', src:'importApplyMiddlewareAndCompose', classes:'img-md', description: 'Import applyMiddleware and Compose'},
+            {type:'text', text:'Then add the following code to declare composeEnhancers, and call it as an argument in the createStore method.'},
+            {type:'image', src:'composeEnhancers', classes:'img-md', description: 'compose enhancers'}
+        ]} />
+
     </div>)
 }
 

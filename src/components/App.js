@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
-import Auth from './Authentication';
-import Rest from './Rest';
-import Setup from './Setup';
+import Auth from './procedures/Authentication';
+import Rest from './procedures/Rest';
+import Setup from './procedures/Setup';
+import Forms from './procedures/Forms';
 import Plans from './AppPlans';
 import Header from './Header';
 import Nav from './Nav';
@@ -27,6 +28,7 @@ const App = () => {
                 <Route path='/plans' component={Plans}></Route>
                 <Route path='/procedures/setup' component={Setup}></Route>
                 <Route path='/procedures/auth' component={Auth}></Route>
+                <Route path='/procedures/forms' component={Forms}></Route>
                 <Route path='/procedures/rest' component={Rest}></Route>
             </BrowserRouter>
         </div>

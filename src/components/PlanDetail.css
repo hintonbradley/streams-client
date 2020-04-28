@@ -24,11 +24,15 @@ h3 {
 
 .plan-card-light {
     background: #dce3ff;
-    border: 1px solid #838696;
+    border: 5px solid #838696;
 }
 
 .plan-card-dark {
     background: #838696;
     color: #fff;
-    border: 1px solid black;
+    border: 5px solid black;
+}
+
+.txt {
+    margin: 10px auto;
 }
