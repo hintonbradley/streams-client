@@ -141,7 +141,7 @@ const Rest = () => {
             {type:'image', src:'callRenderAdmin', classes:'img-md', description: 'calling renderAdmin in JSX'},
         ]} />
 
-<ProcedureDetail card="light" obj={[
+        <ProcedureDetail card="light" obj={[
             {type:'header', text:'Creating a Create Stream Link'},
             {type:'text', text:'To create a "Create Stream" link, we need to do the following.'},
             {type:'text', text:'First we need to import Link from "react-router-dom".'},
@@ -152,6 +152,19 @@ const Rest = () => {
             {type:'image', src:'renderCreateLink', classes:'img-md', description: 'method to render link'},
             {type:'text', text:'We then call renderCreate from inside our render method.'},
             {type:'image', src:'callRenderCreate', classes:'img-md', description: 'calling render create'}
+        ]} />
+
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Creating our own history object and redirecting user'},
+            {type:'text', text:'We create our own history object file to create and maintain a history object to be used throughout the app - for easier access and modify what page the user is looking at.'},
+            {type:'text', text:'Inside the /src directory, we need to create a new file called "history.js". Inside it, we need to add the code below:'},
+            {type:'image', src:'createHisotryJS', classes:'img-md', description: 'creating a history.js file'},
+            {type:'text', text:'Import the new file into the App.js file and add it as a prop to the Browser Router.'},
+            {type:'image', src:'importHistoryJS', classes:'img-md', description: 'importing history.js file'},
+            {type:'text', text:'Because we are now creating our own history object we need to use a plain Router. So change Browser Router to Router so that now we are in charge of the history object (as opposed to Browser Router).'},
+            {type:'image', src:'changeToRouter', classes:'img-md', description: 'change BrowserRouter to Router'},
+            {type:'text', text:'Finally, import the history object into the actions/index.js file and add the code below. Note, we use .push in order to redirect the user to a route.'},
+            {type:'image', src:'redirectUser', classes:'img-md', description: 'redirecting a user'},
         ]} />
 
     </div>)
