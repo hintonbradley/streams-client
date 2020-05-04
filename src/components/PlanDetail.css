@@ -19,7 +19,7 @@ h3 {
     margin: 0 auto;
     display: block;
     border-radius: 10px;
-    margin: 4vw auto;
+    margin: 1vw auto 5vw;
 }
 
 .plan-card-light {
@@ -34,5 +34,5 @@ h3 {
 }
 
 .txt {
-    margin: 10px auto;
+    margin: 10px auto 0;
 }

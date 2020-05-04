@@ -83,11 +83,75 @@ const Rest = () => {
         <ProcedureDetail card="dark" obj={[
             {type:'header', text:'Creating all Action Creators'},
             {type:'text', text:'In order to create all of our Action Creators at once, we first need to define all types in the types.js file in the Actions folder.'},
-            {type:'image', src:'createMultipleTypes', classes:'img-md', description: 'create multiple types in Actions folder'},
+            {type:'image', src:'createMultipleTypes', classes:'img-sm', description: 'create multiple types in Actions folder'},
             {type:'text', text:'Be sure to import all your new types to your Action Creator index file.'},
             {type:'image', src:'importAllTypesToAC', classes:'img-sm', description: 'importing all types to action creator'},
-            {type:'text', text:'Write out all the remaining Action Creators in the index.js file. Note that in the editStream AC, you need to add in a payload after the route in order to have the API update the record.'},
+            {type:'text', text:'Create all your Action Creators in the index.js file in your actions directory.'},
             {type:'image', src:'addRemainingActionCreators', classes:'img-md', description: 'adding all other Action Creators'},
+            {type:'text', text:'Create a new file called "streamReducers" in the reducers directory.'},
+            {type:'text', text:'1. Import all the types from the "actions" directory.'},
+            {type:'text', text:'2. Set up the normal boilerplate code for your switch statement reducer.'},
+            {type:'text', text:'3. Add the key interpolation syntax to add a key value pair to your state.'},
+            {type:'image', src:'streamReducersSetUp', classes:'img-md', description: 'Stream reducers Set Up'},
+            {type:'text', text:'Add the code for "FETCH_STREAMS" reducer.'},
+            {type:'text', text:'1. Create a new object to make a copy of the original state.'},
+            {type:'text', text:'2. Create a function to change state array to an object.'},
+            {type:'text', text:'3. Take the each element in state and run it through the function.'},
+            {type:'text', text:'4. Return the newObj (new state).'},
+            {type:'image', src:'fetchStreamsReducer', classes:'img-md', description: 'Fetch streams reducer code'},
+        ]} />
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Combine reducers.'},
+            {type:'text', text:'Import the new reducers file into the reducers/index.js file to add to combine reducers export.'},
+            {type:'image', src:'streamsAddCombineReducers', classes:'img-sm', description: 'adding streams to combine reducers'},
+        ]} />
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Update StreamList component.'},
+            {type:'text', text:'To show a list of all streams, we first need to update the StreamList component.'},
+            {type:'text', text:'1. Import the Connect component from redux-react.'},
+            {type:'text', text:'2. Import the Action Creator you want to use in the component.'},
+            {type:'text', text:'3. Change component to class based component as we are using componentDidMount lifecycle method.'},
+            {type:'text', text:'4. Wire up component by wrapping it with the connect component and adding in mapStateToPRops and Action Creators.'},
+            {type:'text', text:'5. Create the componentDidMount method and call the Action Creator inside when component mounts.'},
+            {type:'image', src:'classStreamList', classes:'img-md', description: 'updating StreamList component'},
+        ]} />
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Show Streams List.'},
+            {type:'text', text:'To show a list of all streams, we can update the following.'},
+            {type:'text', text:'1. Add a mapStateToProps function in your file and take the object items and add back into an array to be  able to loop through each item.'},
+            {type:'text', text:'2. Add the mapStateToProps function to your connect call in the export.'},
+            {type:'image', src:'showStreamsList1', classes:'img-md', description: 'adding map state to props'},
+            {type:'text', text:'3. Add a renderList method to loop through the newly created props array to return JSX for each stream.'},
+            {type:'text', text:'4. Call the new method in the render method to display all streams.'},
+            {type:'image', src:'showStreamsList2', classes:'img-md', description: 'updating StreamList component'},
+        ]} />
+
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Add Edit/Delete Buttons.'},
+            {type:'text', text:'To add Edit and Delete buttons we must first authenticate with user ID. In order to do that, we need to add a userId to each stream that is created. So we need to update our "CREATE_STREAM" action creator in our actions directory.'},
+            {type:'text', text:'1. We add the getState method to our RESTful call so get the userID from Redux Store.'},
+            {type:'text', text:'2. We then destructure out the userId from the auth key in our state.'},
+            {type:'text', text:'3. Then we update the formValues to include the userId in a single object.'},
+            {type:'image', src:'updateCreateStreamWithAuth', classes:'img-md', description: 'update create stream Action Creator with userID'},
+            {type:'text', text:'We then add the currentUserId (from our Redux store state) as props to our component using mapStateToProps.'},
+            {type:'image', src:'addCurrentUserID', classes:'img-sm', description: 'adding current user ID to mapStateToProps method'},
+            {type:'text', text:'We then add a helper method to check if the current user id is equal to this streams user id. If it is, we render the buttons. Note that currentUserId is now being passed into our component as props through the mapStateToProps method.'},
+            {type:'image', src:'addRenderAdmin', classes:'img-md', description: 'add render admin helper method'},
+            {type:'text', text:'Then call the renderAdmin method in the JSX where you want it displayed.'},
+            {type:'image', src:'callRenderAdmin', classes:'img-md', description: 'calling renderAdmin in JSX'},
+        ]} />
+
+<ProcedureDetail card="light" obj={[
+            {type:'header', text:'Creating a Create Stream Link'},
+            {type:'text', text:'To create a "Create Stream" link, we need to do the following.'},
+            {type:'text', text:'First we need to import Link from "react-router-dom".'},
+            {type:'image', src:'importLink', classes:'img-sm', description: 'import Link from "react-router-dom'},
+            {type:'text', text:'Then we add the "isSignedIn" method from google auth as a prop to our component.'},
+            {type:'image', src:'isSignedInAsProps', classes:'img-sm', description: 'add isSignedIn as prop'},
+            {type:'text', text:'Create a renderCreate function to display the new Link.'},
+            {type:'image', src:'renderCreateLink', classes:'img-md', description: 'method to render link'},
+            {type:'text', text:'We then call renderCreate from inside our render method.'},
+            {type:'image', src:'callRenderCreate', classes:'img-md', description: 'calling render create'}
         ]} />
 
     </div>)
