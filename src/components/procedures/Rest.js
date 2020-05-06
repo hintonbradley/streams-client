@@ -167,6 +167,86 @@ const Rest = () => {
             {type:'image', src:'redirectUser', classes:'img-md', description: 'redirecting a user'},
         ]} />
 
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Setting Routes for Edit, Delete and Stream Show'},
+            {type:'text', text:'Instead of passing the stream ID through a function passed down as props, instead we add the stream ID in the path.'},
+            {type:'image', src:'componentPaths', classes:'img-md', description: 'changing component paths for edit, delete and show'}
+        ]} />
+
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Refactoring Edit button to add :id path'},
+            {type:'text', text:'In the StreamList component (that lists all our streams), we update the renderList method - changing the Edit and Delete buttons to Links.'},
+            {type:'image', src:'refactorEditButton', classes:'img-md', description: 'refactoring stream edit button'},
+            {type:'text', text:'In the App.js file, we need to update the edit Route so that it has a path using the stream ID.'},
+            {type:'image', src:'updateEditRouteWithId', classes:'img-md', description: 'updating the Edit Route with Id'},
+            {type:'text', text:'In the StreamEdit component, pass in props as an argument and console.log props.'},
+            {type:'image', src:'passPropsStreamEdit', classes:'img-md', description: 'passing in props in Stream Edit'},
+            {type:'text', text:'When you view props in the console, in props.match.params, you can view the route params.'},
+            {type:'image', src:'viewRouteParams', classes:'img-md', description: 'view route params'},
+        ]} />
+
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Components work in isolation'},
+            {type:'text', text:'Components that are going to be shown on the screen need to be designed to work by iteself (or by isolation). In other words, every component that React Router is going to show, needs to fetch it\'s own data.'},
+            {type:'image', src:'workInIsolation', classes:'img-md', description: 'components need to work in isolation'},
+        ]} />
+
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Refactor component to work in isolation'},
+            {type:'text', text:'Component needs to grab the data of a particular stream (from url parameter). So, we need to do the following:'},
+            {type:'text', text:'1. Import fetchStream Action Creator and the connect component from react-redux.'},
+            {type:'text', text:'2. We need to refactor this component as a class based component to use lifecycle methods.'},
+            {type:'text', text:'3. Add a componentDidMount lifecycle method to call fetchStream (using the url parameter ID - passed through props, as the match key).'},
+            {type:'text', text:'4. Add a mapStateToProps function to retrieve the data for the single stream we want to edit.'},
+            {type:'text', text:'5. Wrap the component and export it using the mapStateToProps and the fetchStream action creator as arguments.'},
+            {type:'image', src:'refactorEditForIsolation', classes:'img-md', description: 'refactor edit component for isolation'},
+        ]} />
+
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Form Reusability'},
+            {type:'text', text:'Plan to create a component to Reuse code for forms.'},
+            {type:'image', src:'formReusability', classes:'img-sm', description: 'creating component for reusibility'},
+            {type:'text', text:'In the /components/streams directory, create a new component called StreamForm and copy and paste StreamCreate code inside it and change the name to StreamForm and update export statement to below:'},
+            {type:'image', src:'exportStreamForm', classes:'img-sm', description: 'export stream form'},
+            {type:'text', text:'In the onSubmit method, change the name of the method from props to "onSubmit".'},
+            {type:'image', src:'onSubmitStreamForm', classes:'img-sm', description: 'onSubmit stream form'},
+            {type:'text', text:'Finally, remove the import files that are not needed.'},
+            {type:'image', src:'removeImportStreamForm', classes:'img-sm', description: 'remove imports from stream form'},
+        ]} />
+
+        <ProcedureDetail card="light" obj={[
+            {type:'header', text:'Refactor StreamCreate to use StreamForm'},
+            {type:'text', text:'In order to have StreamCreate now use the StreamForm component, we need to do the following:'},
+            {type:'text', text:'1. We first need to remove the import files that are no longer needed, and import files that are.'},
+            {type:'text', text:'2. We don\'t need renderError or renderInput methods since those are handled by StreamForm.'},
+            {type:'image', src:'refactorStreamCreate1', classes:'img-ms', description: 'refactoring StreamCreate part 1'},
+            {type:'text', text:'3. We keep onSubmit since it is a callback in StreamForm.'},
+            {type:'text', text:'4. We refactor the render method to wrap the JSX returned from StreamForm.'},
+            {type:'image', src:'refactorStreamCreate2', classes:'img-md', description: 'refactoring StreamCreate part 2'},
+            {type:'text', text:'5. We don\'t need validate nor formWrapped methods anymore.'},
+            {type:'text', text:'6. We update the export file.'},
+            {type:'image', src:'refactorStreamCreate3', classes:'img-md', description: 'refactoring StreamCreate part 3'}
+        ]} />
+
+        <ProcedureDetail card="dark" obj={[
+            {type:'header', text:'Refactor StreamEdit to use StreamForm'},
+            {type:'text', text:'Note - before we get started. Please look at the difference between PUT and PATCH. If you keep using a put request, you will lose data that isn\'t included in the arguments when calling your Action Creator!'},
+            {type:'image', src:'putAndPatch', classes:'img-ms', description: 'put and patch'},
+            {type:'text', text:'In order to have StreamEdit now use the StreamForm component, we need to do the following:'},
+            {type:'text', text:'1. We first need to import files that are required in this component.'},
+            {type:'text', text:'2. We don\'t need renderError or renderInput methods since those are handled by StreamForm. NOTE: PLEASE MAKE SURE onSubmit METHOD IS AN ARROW FUNCTION!'},
+            {type:'image', src:'editStreamWithStreamForm1', classes:'img-ms', description: 'refactoring StreamEdit part 1'},
+            {type:'text', text:'3. Create a helper method to render JSX depending on if you have initialValues or not. Note that inside the StreamForm component we are including initialValues ONLY for the values we want to change. DO NOT add any values that should not be changed as initialValues (i.e. userIds or stream Ids - these should not be changed in our API!!!)'},
+            {type:'image', src:'editStreamWithStreamForm2', classes:'img-md', description: 'refactoring StreamCreate part 2'},
+            {type:'text', text:'3. Call the helper method in the render method.'},
+            {type:'text', text:'4. Add the editStream in the connect function in the export statement.'},
+            {type:'image', src:'editStreamWithStreamForm3', classes:'img-md', description: 'refactoring StreamCreate part 3'},
+            {type:'text', text:'5. Then we need to update our onSubmit function to call our Action Creator. NOTE: Be sure the method is an arrow function.'},
+            {type:'image', src:'editStreamWithStreamForm4', classes:'img-md', description: 'refactoring StreamCreate part 4'},
+            {type:'text', text:'5. Finally, in the Action Creator, we redirect the user to the home page afer we update the API and the Redux Store to view the changes of the stream.'},
+            {type:'image', src:'editStreamWithStreamForm5', classes:'img-md', description: 'refactoring StreamCreate part 5'},
+        ]} />
+
     </div>)
 }
 
