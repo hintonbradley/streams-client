@@ -11,6 +11,7 @@ const Nav = () => {
                 <Link to="/procedures/auth" >Authentication</Link>
                 <Link to="/procedures/forms" >Forms</Link>
                 <Link to="/procedures/rest"> REST</Link>
+                <Link to="/procedures/portals"> Portals</Link>
             </div>
         </div>
     )

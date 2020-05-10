@@ -23,7 +23,9 @@ export default (state={}, action) => {
         case EDIT_STREAM:
             return {...state, [action.payload.id] : action.payload};
         case DELETE_STREAM:
-            return state.filter(({ id }) => id !== action.payload);
+            const newState = {...state};
+            delete newState[action.payload];
+            return newState;
         default:
             return state;
     }

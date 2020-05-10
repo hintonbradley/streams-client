@@ -126,7 +126,7 @@ const Rest = () => {
             {type:'image', src:'showStreamsList2', classes:'img-md', description: 'updating StreamList component'},
         ]} />
 
-        <ProcedureDetail card="light" obj={[
+        <ProcedureDetail card="dark" obj={[
             {type:'header', text:'Add Edit/Delete Buttons.'},
             {type:'text', text:'To add Edit and Delete buttons we must first authenticate with user ID. In order to do that, we need to add a userId to each stream that is created. So we need to update our "CREATE_STREAM" action creator in our actions directory.'},
             {type:'text', text:'1. We add the getState method to our RESTful call so get the userID from Redux Store.'},
@@ -167,10 +167,10 @@ const Rest = () => {
             {type:'image', src:'redirectUser', classes:'img-md', description: 'redirecting a user'},
         ]} />
 
-        <ProcedureDetail card="dark" obj={[
+        <ProcedureDetail card="light" obj={[
             {type:'header', text:'Setting Routes for Edit, Delete and Stream Show'},
             {type:'text', text:'Instead of passing the stream ID through a function passed down as props, instead we add the stream ID in the path.'},
-            {type:'image', src:'componentPaths', classes:'img-md', description: 'changing component paths for edit, delete and show'}
+            {type:'image', src:'componentPaths', classes:'img-sm', description: 'changing component paths for edit, delete and show'}
         ]} />
 
         <ProcedureDetail card="dark" obj={[
@@ -180,18 +180,18 @@ const Rest = () => {
             {type:'text', text:'In the App.js file, we need to update the edit Route so that it has a path using the stream ID.'},
             {type:'image', src:'updateEditRouteWithId', classes:'img-md', description: 'updating the Edit Route with Id'},
             {type:'text', text:'In the StreamEdit component, pass in props as an argument and console.log props.'},
-            {type:'image', src:'passPropsStreamEdit', classes:'img-md', description: 'passing in props in Stream Edit'},
+            {type:'image', src:'passPropsStreamEdit', classes:'img-sm', description: 'passing in props in Stream Edit'},
             {type:'text', text:'When you view props in the console, in props.match.params, you can view the route params.'},
             {type:'image', src:'viewRouteParams', classes:'img-md', description: 'view route params'},
         ]} />
 
-        <ProcedureDetail card="dark" obj={[
+        <ProcedureDetail card="light" obj={[
             {type:'header', text:'Components work in isolation'},
             {type:'text', text:'Components that are going to be shown on the screen need to be designed to work by iteself (or by isolation). In other words, every component that React Router is going to show, needs to fetch it\'s own data.'},
-            {type:'image', src:'workInIsolation', classes:'img-md', description: 'components need to work in isolation'},
+            {type:'image', src:'workInIsolation', classes:'img-sm', description: 'components need to work in isolation'},
         ]} />
 
-        <ProcedureDetail card="light" obj={[
+        <ProcedureDetail card="dark" obj={[
             {type:'header', text:'Refactor component to work in isolation'},
             {type:'text', text:'Component needs to grab the data of a particular stream (from url parameter). So, we need to do the following:'},
             {type:'text', text:'1. Import fetchStream Action Creator and the connect component from react-redux.'},
@@ -202,7 +202,7 @@ const Rest = () => {
             {type:'image', src:'refactorEditForIsolation', classes:'img-md', description: 'refactor edit component for isolation'},
         ]} />
 
-        <ProcedureDetail card="dark" obj={[
+        <ProcedureDetail card="light" obj={[
             {type:'header', text:'Form Reusability'},
             {type:'text', text:'Plan to create a component to Reuse code for forms.'},
             {type:'image', src:'formReusability', classes:'img-sm', description: 'creating component for reusibility'},
@@ -214,7 +214,7 @@ const Rest = () => {
             {type:'image', src:'removeImportStreamForm', classes:'img-sm', description: 'remove imports from stream form'},
         ]} />
 
-        <ProcedureDetail card="light" obj={[
+        <ProcedureDetail card="dark" obj={[
             {type:'header', text:'Refactor StreamCreate to use StreamForm'},
             {type:'text', text:'In order to have StreamCreate now use the StreamForm component, we need to do the following:'},
             {type:'text', text:'1. We first need to remove the import files that are no longer needed, and import files that are.'},
@@ -228,7 +228,7 @@ const Rest = () => {
             {type:'image', src:'refactorStreamCreate3', classes:'img-md', description: 'refactoring StreamCreate part 3'}
         ]} />
 
-        <ProcedureDetail card="dark" obj={[
+        <ProcedureDetail card="light" obj={[
             {type:'header', text:'Refactor StreamEdit to use StreamForm'},
             {type:'text', text:'Note - before we get started. Please look at the difference between PUT and PATCH. If you keep using a put request, you will lose data that isn\'t included in the arguments when calling your Action Creator!'},
             {type:'image', src:'putAndPatch', classes:'img-ms', description: 'put and patch'},
@@ -246,7 +246,6 @@ const Rest = () => {
             {type:'text', text:'5. Finally, in the Action Creator, we redirect the user to the home page afer we update the API and the Redux Store to view the changes of the stream.'},
             {type:'image', src:'editStreamWithStreamForm5', classes:'img-md', description: 'refactoring StreamCreate part 5'},
         ]} />
-
     </div>)
 }
 
